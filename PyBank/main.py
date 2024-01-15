@@ -74,3 +74,20 @@ with open(pybankpath) as csvfile :
     
     totalchange = int(sum(changes))
     averagechange = round(float(totalchange/(row_count-1)),2)
+
+print("Financial Analysis")
+print("------------------------------------")
+print("Total Months: ", row_count)
+print("Total: ","$",total)
+print("Average Change: ", averagechange)
+
+#Open a text file for writing
+analysistext = "path_to_output_file.txt" 
+with open(analysistext, 'w') as txt_file:
+    
+    # Write the analysis results to the text file
+    txt_file.write("Financial Analysiss\n")
+    txt_file.write("-----------------\n")
+    txt_file.write("Total Months: {}\n".format(row_count))
+    txt_file.write("Total: {}\n".format(total))
+    txt_file.write("Average Change: {}\n".format(averagechange))
